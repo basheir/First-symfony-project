@@ -18,10 +18,8 @@ final class ProductController extends AbstractController
         ]);
     }
 
-    #[Route('/product/{id}')]
+    #[Route('/product/{id<\d+>}')]
     public function show($id):Response {
-
-        dd($id);
-
+        return $this->render('product/show.html.twig');
     }
 }
